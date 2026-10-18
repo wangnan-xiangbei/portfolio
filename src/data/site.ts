@@ -24,7 +24,7 @@ export interface Work {
   /** 是否作为重点作品（卡片更大、置顶） */
   featured?: boolean
   /**
-   * 作品封面图路径（可选）。放到 public/ 目录下，例如 "/works/lianti.jpg"。
+   * 作品封面图路径（可选）。放到 public/ 目录下，例如 "./works/lianti.jpg"。
    * 留空则使用下方 gradient 生成的渐变占位封面。
    */
   image?: string
@@ -32,13 +32,13 @@ export interface Work {
   gradient: string
   /** 应用图标字形（无真实图标图片时使用，建议一个汉字或 emoji），渲染在彩色圆角方里 */
   icon?: string
-  /** 真实应用图标图片路径（可选），放到 public/ 下，例如 "/works/lianti-icon.png"，优先于 icon 字形 */
+  /** 真实应用图标图片路径（可选），放到 public/ 下，例如 "./works/lianti-icon.png"，优先于 icon 字形 */
   iconImage?: string
   /** 商店卡片副标题（简短一句） */
   tagline?: string
   /** 评分（0-5，可选），商店卡片显示星级 */
   rating?: number
-  /** 详情页截图（可选），放到 public/ 下，例如 ["/works/lianti-1.png"] */
+  /** 详情页截图（可选），放到 public/ 下，例如 ["./works/lianti-1.png"] */
   screenshots?: string[]
   /** 版本号，详情页显示 */
   version?: string
@@ -108,14 +108,14 @@ export const works: Work[] = [
     featured: true,
     gradient: "from-emerald-500 via-teal-500 to-cyan-600",
     icon: "炼",
-    iconImage: "/works/lianti.png",
+    iconImage: "./works/lianti.png",
     tagline: "修仙武侠风 · 健身打卡",
     rating: 4.9,
     screenshots: [
-      "/works/lianti-1.png",
-      "/works/lianti-2.png",
-      "/works/lianti-3.png",
-      "/works/lianti-4.png",
+      "./works/lianti-1.png",
+      "./works/lianti-2.png",
+      "./works/lianti-3.png",
+      "./works/lianti-4.png",
     ],
     version: "1.1",
     size: "约 20 MB",
@@ -123,7 +123,7 @@ export const works: Work[] = [
       "1.1 首个公开版本：训练计划、每日打卡、进度追踪与身体数据管理。",
     ],
     links: [
-      { label: "下载 APK", url: "/downloads/lianti.apk", type: "app" },
+      { label: "下载 APK", url: "./downloads/lianti.apk", type: "app" },
       { label: "官方网站", url: "https://liantiapp.com", type: "web" },
     ],
   },
@@ -138,14 +138,14 @@ export const works: Work[] = [
     status: "新作",
     gradient: "from-sky-500 via-blue-500 to-indigo-600",
     icon: "四",
-    iconImage: "/works/cet46.png",
+    iconImage: "./works/cet46.png",
     tagline: "四六级备考 · 刷词提分",
     rating: 4.7,
     screenshots: [
-      "/works/cet46-1.png",
-      "/works/cet46-2.png",
-      "/works/cet46-3.png",
-      "/works/cet46-4.png",
+      "./works/cet46-1.png",
+      "./works/cet46-2.png",
+      "./works/cet46-3.png",
+      "./works/cet46-4.png",
     ],
     version: "1.0",
     size: "约 23 MB",
@@ -153,7 +153,7 @@ export const works: Work[] = [
       "1.0 首个版本：单词背诵、听力练习、真题模考与成绩解析。",
     ],
     links: [
-      { label: "下载 APK", url: "/downloads/cet46.apk", type: "app" },
+      { label: "下载 APK", url: "./downloads/cet46.apk", type: "app" },
     ],
   },
 ]
