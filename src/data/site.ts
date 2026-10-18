@@ -30,6 +30,14 @@ export interface Work {
   image?: string
   /** 渐变占位封面（无图片时使用），写 Tailwind 渐变类名 */
   gradient: string
+  /** 应用图标字形（无真实图标图片时使用，建议一个汉字或 emoji），渲染在彩色圆角方里 */
+  icon?: string
+  /** 真实应用图标图片路径（可选），放到 public/ 下，例如 "/works/lianti-icon.png"，优先于 icon 字形 */
+  iconImage?: string
+  /** 商店卡片副标题（简短一句） */
+  tagline?: string
+  /** 评分（0-5，可选），商店卡片显示星级 */
+  rating?: number
   links: WorkLink[]
 }
 
@@ -40,16 +48,16 @@ export interface Social {
 
 export const site = {
   // —— 基本信息 ——
-  name: "向北", // TODO: 换成你的名字 / 昵称
-  initials: "XB", // TODO: 名字首字母，用于头像占位
+  name: "向北",
+  initials: "XB",
   role: "工商管理专业 · 独立产品开发者",
-  tagline: "把想法做成能用的产品。这里是我的作品集。",
+  tagline: "把想法做成能用的产品。这里是我的应用商店。",
   location: "中国",
 
   // —— 关于我（支持多段，用数组） ——
   bio: [
     "我是一名工商管理专业的学生，也是一名独立开发者。比起只写文档，我更喜欢亲手把想法变成能跑起来的产品。",
-    "目前主推的作品是健身 App「炼体」——从需求、设计到开发、上架备案，全部独立完成。这个站点用来集中展示我做过、正在做的各种作品。",
+    "目前主推的作品是健身 App「炼体」——从需求、设计到开发、上架备案，全部独立完成。这个站点用来集中展示我做过、正在做的各种应用。",
   ],
 
   // —— 关键事实（关于我区块右侧展示） ——
@@ -61,7 +69,7 @@ export const site = {
   ],
 
   // —— 联系方式 ——
-  email: "2971875757@qq.com", // TODO: 换成你的邮箱
+  email: "2971875757@qq.com",
   /** 网站备案号（如已备案），显示在页脚；没有可留空字符串 */
   icp: "陕ICP备2026026603号-1A",
   socials: [
@@ -72,7 +80,7 @@ export const site = {
 
   // —— 导航 ——
   nav: [
-    { id: "works", label: "作品" },
+    { id: "works", label: "应用" },
     { id: "about", label: "关于" },
     { id: "contact", label: "联系" },
   ],
@@ -91,6 +99,9 @@ export const works: Work[] = [
     badges: ["软著", "陕ICP备2026026603号-1A"],
     featured: true,
     gradient: "from-emerald-500 via-teal-500 to-cyan-600",
+    icon: "炼",
+    tagline: "修仙武侠风 · 健身打卡",
+    rating: 4.9,
     links: [
       { label: "官方网站", url: "https://liantiapp.com", type: "web" },
     ],
@@ -105,6 +116,9 @@ export const works: Work[] = [
     year: "2026",
     status: "新作",
     gradient: "from-sky-500 via-blue-500 to-indigo-600",
+    icon: "四",
+    tagline: "四六级备考 · 刷词提分",
+    rating: 4.7,
     links: [
       { label: "下载 APK", url: "/downloads/cet46.apk", type: "app" }, // 把真实 APK 放到 public/downloads/cet46.apk
     ],
