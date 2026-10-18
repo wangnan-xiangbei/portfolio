@@ -38,6 +38,14 @@ export interface Work {
   tagline?: string
   /** 评分（0-5，可选），商店卡片显示星级 */
   rating?: number
+  /** 详情页截图（可选），放到 public/ 下，例如 ["/works/lianti-1.png"] */
+  screenshots?: string[]
+  /** 版本号，详情页显示 */
+  version?: string
+  /** 更新日志（多条），详情页显示 */
+  changelog?: string[]
+  /** 安装包体积说明，详情页「信息」区显示 */
+  size?: string
   links: WorkLink[]
 }
 
@@ -100,9 +108,22 @@ export const works: Work[] = [
     featured: true,
     gradient: "from-emerald-500 via-teal-500 to-cyan-600",
     icon: "炼",
+    iconImage: "/works/lianti.png",
     tagline: "修仙武侠风 · 健身打卡",
     rating: 4.9,
+    screenshots: [
+      "/works/lianti-1.png",
+      "/works/lianti-2.png",
+      "/works/lianti-3.png",
+      "/works/lianti-4.png",
+    ],
+    version: "1.1",
+    size: "约 20 MB",
+    changelog: [
+      "1.1 首个公开版本：训练计划、每日打卡、进度追踪与身体数据管理。",
+    ],
     links: [
+      { label: "下载 APK", url: "/downloads/lianti.apk", type: "app" },
       { label: "官方网站", url: "https://liantiapp.com", type: "web" },
     ],
   },
@@ -117,10 +138,22 @@ export const works: Work[] = [
     status: "新作",
     gradient: "from-sky-500 via-blue-500 to-indigo-600",
     icon: "四",
+    iconImage: "/works/cet46.png",
     tagline: "四六级备考 · 刷词提分",
     rating: 4.7,
+    screenshots: [
+      "/works/cet46-1.png",
+      "/works/cet46-2.png",
+      "/works/cet46-3.png",
+      "/works/cet46-4.png",
+    ],
+    version: "1.0",
+    size: "约 23 MB",
+    changelog: [
+      "1.0 首个版本：单词背诵、听力练习、真题模考与成绩解析。",
+    ],
     links: [
-      { label: "下载 APK", url: "/downloads/cet46.apk", type: "app" }, // 把真实 APK 放到 public/downloads/cet46.apk
+      { label: "下载 APK", url: "/downloads/cet46.apk", type: "app" },
     ],
   },
 ]

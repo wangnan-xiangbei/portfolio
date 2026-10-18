@@ -2,13 +2,13 @@ import { works } from "@/data/site"
 import { AppIcon } from "@/components/AppIcon"
 import { StarRating } from "@/components/StarRating"
 
-export function Works() {
+export function Works({ onSelect }: { onSelect: (id: string) => void }) {
   return (
     <section id="works" className="container mx-auto max-w-5xl px-4 py-16">
       <div className="mb-8">
         <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">全部应用</h2>
         <p className="mt-1 text-muted-foreground">
-          我独立开发、正在维护的移动应用。点击「获取」前往下载或官网。
+          我独立开发、正在维护的移动应用。点击卡片查看详情，或点「获取 / 下载」直接安装。
         </p>
       </div>
 
@@ -19,7 +19,16 @@ export function Works() {
           return (
             <div
               key={w.id}
-              className="flex items-center gap-4 rounded-2xl border bg-card p-4 shadow-sm transition hover:shadow-md"
+              onClick={() => onSelect(w.id)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault()
+                  onSelect(w.id)
+                }
+              }}
+              className="flex cursor-pointer items-center gap-4 rounded-2xl border bg-card p-4 shadow-sm transition hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             >
               <AppIcon
                 icon={w.icon}
@@ -57,6 +66,7 @@ export function Works() {
                   href={primary.url}
                   target={primary.type === "web" ? "_blank" : undefined}
                   rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                   className="inline-flex shrink-0 items-center justify-center rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
                 >
                   {btnLabel}
