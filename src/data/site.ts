@@ -65,7 +65,7 @@ export const site = {
   /** 网站备案号（如已备案），显示在页脚；没有可留空字符串 */
   icp: "陕ICP备2026026603号-1A",
   socials: [
-    { label: "GitHub", url: "https://github.com/yourname" }, // TODO
+    { label: "GitHub", url: "https://github.com/wangnan-xiangbei" },
     { label: "微博", url: "#" }, // TODO
     { label: "知乎", url: "#" }, // TODO
   ] as Social[],
