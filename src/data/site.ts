@@ -144,14 +144,14 @@ export const works: Work[] = [
     title: "小楠记账",
     category: "移动端 App · 财务工具",
     description:
-      "一款本地优先的极简记账 App。微信账单可以直接导入（加密压缩包也能读），读屏与通知两条通道会在付款成功的那一刻自动记下一笔；账目只存在本机，不注册账号、不上传云端。余额按「期初 + 流水」实时算出，退款会自动抵回原分类。",
+      "一款本地优先的极简记账 App。微信账单可以直接导入（加密压缩包也能读），读屏与通知两条通道会在付款成功的那一刻自动记下一笔；桌面小组件一眼看清本月花销与预算进度，点「+」直接开记。账目只存在本机，不注册账号、不上传云端。余额按「期初 + 流水」实时算出，退款会自动抵回原分类。",
     tags: ["移动 App", "记账", "本地优先"],
     year: "2026",
     status: "新作",
     gradient: "from-blue-600 via-indigo-500 to-violet-600",
     icon: "账",
     iconImage: "./works/xiaonan.png",
-    tagline: "微信账单导入 · 付款后自动记一笔",
+    tagline: "微信账单导入 · 桌面小组件一眼看清",
     screenshots: [
       "./works/xiaonan-1.png",
       "./works/xiaonan-2.png",
@@ -159,9 +159,12 @@ export const works: Work[] = [
       "./works/xiaonan-4.png",
       "./works/xiaonan-5.png",
     ],
-    version: "1.2.1",
+    version: "1.2.2",
     size: "约 25 MB",
     changelog: [
+      "1.2.2 新增桌面小组件：本月支出、今日花销、预算进度与支出 TOP2，点「+」直达记一笔",
+      "1.2.2 新增预算提醒：用到 80% 与超支时各通知一次，同类每月不重复打扰",
+      "1.2.2 分类选择条、草稿关闭按钮、头像色点的点击区统一撑到 44dp",
       "1.2.1 应用更名为「小楠记账」",
       "1.2.0 支持导入微信账单：.zip（含解压密码）/ .csv / .xlsx 三种入口；同一份账单导两次不会重复记账",
       "1.2.0 每日记账提醒：可设固定时间，重启手机后自动重排",
@@ -172,7 +175,7 @@ export const works: Work[] = [
       "1.0 首个版本：极简记账、分类统计、预算与月度对比",
     ],
     links: [
-      { label: "下载 APK（1.2.1）", url: "./downloads/xiaonan.apk", type: "app" },
+      { label: "下载 APK（1.2.2）", url: "./downloads/xiaonan.apk", type: "app" },
     ],
   },
   {
